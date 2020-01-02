@@ -34,6 +34,9 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.QueryListener;
 import cn.bmob.v3.listener.UpdateListener;
 
+import  android.util.Log;
+import  android.util.EventLogTags;
+
 public class IncomeItemActivity extends AppCompatActivity {
     private RadioButton rb_income1_update,rb_income2_update,rb_income3_update,rb_income4_update,rb_income5_update,rb_income6_update,rb_income7_update,rb_income8_update,rb_income9_update;
     private Button btn_write_income_delete;
@@ -48,6 +51,7 @@ public class IncomeItemActivity extends AppCompatActivity {
     private Date dateD_update = new Date();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("log","进入IncomItemActivity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_item);
         Intent intent = getIntent();
@@ -206,6 +210,7 @@ public class IncomeItemActivity extends AppCompatActivity {
 
     private void initEditText(){
         et_money_income_update.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        //文本框限制条件
         et_money_income_update.setFilters(new InputFilter[]{new InputFilter() {
             int decimalNumber = 2;//小数点后保留位数
 

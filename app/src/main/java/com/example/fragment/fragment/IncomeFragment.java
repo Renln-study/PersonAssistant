@@ -53,7 +53,7 @@ public class IncomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_income, container, false);
-        Bmob.initialize(this.getActivity(),"cd6ace4e1908e4ddac3f2fd44dc26208");
+        Bmob.initialize(this.getActivity(),"8f2c9a975660b9652f852fecfa911c84");
         listView =view.findViewById(R.id.listView2);
         mSearchView = view.findViewById(R.id.incomeSearchView);
         /*queryMoney = view.findViewById(R.id.incomeQueryMoney);
@@ -62,7 +62,9 @@ public class IncomeFragment extends Fragment {
         incomeRefreshFAB = view.findViewById(R.id.incomeRefreshFAB);
 
         //initButtonQuery();
+        //初始化添加按钮
         initFloatActButton();
+        //查询所有信息
         queryAll();
         query();
         // Inflate the layout for this fragment
@@ -71,6 +73,7 @@ public class IncomeFragment extends Fragment {
     }
 
     private void queryAll(){
+        //清理数据
         data.clear();
         ObjectID.clear();
         BmobQuery<IncomeTable> query = new BmobQuery<>();
@@ -119,10 +122,12 @@ public class IncomeFragment extends Fragment {
                         item.put("free", list.get(i).getFree());
                         data.add(item);
                     }
+                    //初始化简单适配器
                     adapter = new SimpleAdapter(getContext(), data,
                             R.layout.listview_item, new String[] { "image", "type","money","date","free"},
                             new int[] { R.id.imageView1, R.id.textView1 , R.id.textView2,R.id.textView3,R.id.textView4});
                     listView.setAdapter(adapter);
+                    //选择新增收入
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -230,28 +235,13 @@ public class IncomeFragment extends Fragment {
         });
     }
 
-    /*private void initButtonQuery(){
-        queryMoney.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getActivity().getApplicationContext(), QueryMoneyActivity.class);
-                getActivity().startActivity(intent);
-            }
-        });
-        queryDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getActivity().getApplicationContext(), QueryDateActivity.class);
-                getActivity().startActivity(intent);
-            }
-        });
-    }*/
 
     private void initFloatActButton(){
         incomeAddFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getActivity().getApplicationContext(), AddIncomeActivity.class);
+//                在Fragment中获取上下文Context一般用getActivity:
                 getActivity().startActivity(intent);
             }
         });

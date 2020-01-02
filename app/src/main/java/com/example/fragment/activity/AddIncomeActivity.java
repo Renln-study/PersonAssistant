@@ -11,6 +11,7 @@ import android.text.InputFilter;
 import android.text.InputType;
 import android.text.Spanned;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,6 +44,7 @@ public class AddIncomeActivity extends AppCompatActivity {
     private Date dateD = new Date();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("log","进入AddIncomItemActivity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_income);
         Bmob.initialize(this,"cd6ace4e1908e4ddac3f2fd44dc26208");
