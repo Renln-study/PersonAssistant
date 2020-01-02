@@ -59,7 +59,7 @@ public class PayItemActivity extends AppCompatActivity {
         initUpdateButton();
         initDelete();
     }
-
+    //展示每个选项的细节
     private void queryID(){
         BmobQuery<PayTable> query = new BmobQuery<>();
         query.getObject(objectIDS, new QueryListener<PayTable>() {

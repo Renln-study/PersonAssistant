@@ -90,7 +90,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return super.onOptionsItemSelected(item);
     }
-
+    /*
+     Bundle在Activity之间传递数据
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         //通过onSaveInstanceState方法保存当前显示的fragment

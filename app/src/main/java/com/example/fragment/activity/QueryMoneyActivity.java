@@ -29,6 +29,15 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
+/*
+SimpleAdapter的参数说明
+第一个参数 表示访问整个android应用程序接口，基本上所有的组件都需要
+第二个参数表示生成一个Map(String ,Object)列表选项
+第三个参数表示界面布局的id 表示该文件作为列表项的组件
+第四个参数表示该Map对象的哪些key对应value来生成列表项
+第五个参数表示来填充的组件 Map对象key对应的资源一依次填充组件 顺序有对应关系
+ */
+
 public class QueryMoneyActivity extends AppCompatActivity {
     private EditText minMoney,maxMoney;
     private Button queryMoneyActivity;
@@ -42,6 +51,9 @@ public class QueryMoneyActivity extends AppCompatActivity {
     public List<String> ObjectID = new ArrayList<>();
     public List<String> ObjectID1 = new ArrayList<>();
     @Override
+    /*
+    Bundle  主要是用来不同的activity传递数据    键值对形式保存数据
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_query_money);
@@ -165,6 +177,7 @@ public class QueryMoneyActivity extends AppCompatActivity {
                     int size = data.size();
                     if(size>0){
                         data.removeAll(data);
+                        // 当外面强制改变内部组成状态时，强制调用getView来刷新每个Item的内容
                         adapter.notifyDataSetChanged();
                     }
                     for(int i=0;i<list.size();i++){

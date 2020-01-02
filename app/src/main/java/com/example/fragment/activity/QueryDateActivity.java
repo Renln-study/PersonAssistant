@@ -30,7 +30,10 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.datatype.BmobDate;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
+/*
+    简单适配器---主要是将数据值通过映射关系一一对应XML视图
 
+ */
 public class QueryDateActivity extends AppCompatActivity {
     private TextView startDate,endDate;
     private Date startDateD=new Date(),endDateD=new Date();
@@ -49,9 +52,9 @@ public class QueryDateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_query_date);
         findById();
         initDateStart();
-        ininQueryMoneyButton();
+        initQueryMoneyButton();
     }
-
+//    时间封装器
     private void showDateStart() {
         TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
             @Override
@@ -147,7 +150,7 @@ public class QueryDateActivity extends AppCompatActivity {
         });
     }
 
-    private void ininQueryMoneyButton(){
+    private void initQueryMoneyButton(){
         queryDateActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -33,7 +33,8 @@ public class MineFragment extends Fragment {
         // Required empty public constructor
     }
 
-
+//    对于一个没有被载入或者想要动态载入的界面，都需要使用LayoutInflater.inflate()来载入；
+//     类似于FindById()
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

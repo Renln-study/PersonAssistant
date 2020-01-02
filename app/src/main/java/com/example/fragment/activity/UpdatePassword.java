@@ -59,7 +59,9 @@ public class UpdatePassword extends AppCompatActivity {
         });
 
 
-
+        /*
+        主要是用来不同的activity之间的传值
+         */
         Intent intent = getIntent();
         userName =  intent.getStringExtra("username");
 

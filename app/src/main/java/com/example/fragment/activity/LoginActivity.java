@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intentRegister);
             }
         });
-
+//SharedPreferences在android中主要以xml文件的方式保存较小的键值对。
         sp = getSharedPreferences("userInfo", 0);
         String name=sp.getString("USER_NAME", "");
         String pass =sp.getString("PASSWORD", "");

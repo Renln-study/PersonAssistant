@@ -20,7 +20,7 @@ public class WelcomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        Bmob.initialize(WelcomeActivity.this,"cd6ace4e1908e4ddac3f2fd44dc26208");
+        Bmob.initialize(WelcomeActivity.this,"8f2c9a975660b9652f852fecfa911c84");
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         startLoginActivity();
     }
